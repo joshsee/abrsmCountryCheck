@@ -3,7 +3,6 @@ const accountSid = process.env.accountSid || apiKey.accountSid
 const authToken = process.env.authToken || apiKey.authToken
 const joshNumber = process.env.joshNumber || apiKey.joshNumber
 const client = require('twilio')(accountSid, authToken);
-
 const request = require('postman-request')
 
 module.exports = (req, res) => { 
@@ -30,4 +29,5 @@ module.exports = (req, res) => {
             }
         }
     })
+    res.status(200).send('Finish Here');
 };
