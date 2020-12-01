@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
         const result = await country()
         if (result.responseValue){
             for (i = 0; i < result.responseValue.length; i++) {
-                if(result.responseValue[i].isoCode == 'HK'){
+                if(result.responseValue[i].isoCode == 'DO'){
                     // console.log('Found Hong Kong')
                     client.messages.create({
                         body: 'Hong Kong available in ABRSM',
@@ -23,9 +23,10 @@ module.exports = async (req, res) => {
             }
         } else {
             // console.log('Not Found');
-            res.status(200).send('Not Found');
+            res.status(200).send('Not Found From Result');
         }
     } catch(e){
         res.status(400).send(e)
     }
+    res.status(200).send('End Of Execution');
 };
