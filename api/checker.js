@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
         const result = await country()
         if (result.responseValue){
             for (i = 0; i < result.responseValue.length; i++) {
-                if(result.responseValue[i].isoCode == 'DO'){
+                if(result.responseValue[i].isoCode == 'HK'){
                     // console.log('Found Hong Kong')
                     client.messages.create({
                         body: 'Hong Kong available in ABRSM',
