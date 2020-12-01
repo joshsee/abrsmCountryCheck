@@ -1,4 +1,4 @@
-// const apiKey = require('./appConfig.js')
+const apiKey = require('./appConfig.example.js')
 const accountSid = process.env.accountSid || apiKey.accountSid
 const authToken = process.env.authToken || apiKey.authToken
 const joshNumber = process.env.joshNumber || apiKey.joshNumber
