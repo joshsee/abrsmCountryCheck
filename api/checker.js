@@ -13,13 +13,12 @@ module.exports = async (req, res) => {
         if (result.responseValue){
             for (i = 0; i < result.responseValue.length; i++) {
                 if(result.responseValue[i].isoCode == 'IE'){
-                    res.status(200).send('Found Hong Kong');
                     // console.log('Found Hong Kong')
                     client.messages.create({
                         body: 'Hong Kong available in ABRSM',
                         from: 'ABRSMCHEKER',
                         to: joshNumber
-                    });
+                    }).then(message => res.status(200).send('Found Hong Kong '+message.sid));
                 }
             }
         } else {
