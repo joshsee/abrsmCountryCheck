@@ -1,6 +1,7 @@
 // const apiKey = require('./appConfig.js')
 const accountSid = process.env.accountSid || apiKey.accountSid
 const authToken = process.env.authToken || apiKey.authToken
+const joshNumber = process.env.joshNumber || apiKey.joshNumber
 const client = require('twilio')(accountSid, authToken);
 
 const request = require('postman-request')
