@@ -2,6 +2,7 @@ const apiKey = require('./appConfig.example.js')
 const accountSid = process.env.accountSid || apiKey.accountSid
 const authToken = process.env.authToken || apiKey.authToken
 const joshNumber = process.env.joshNumber || apiKey.joshNumber
+const ronNumber = process.env.ronNumber || apiKey.ronNumber
 const client = require('twilio')(accountSid, authToken);
 const request = require('postman-request')
 const country = require('./util/coutryChecker')
@@ -18,6 +19,11 @@ module.exports = async (req, res) => {
                         body: 'Hong Kong available in ABRSM',
                         from: 'ABRSMCHEKER',
                         to: joshNumber
+                    }).then(message => res.status(200).send('Found Hong Kong '+message.sid));
+                    client.messages.create({
+                        body: 'Hong Kong available in ABRSM',
+                        from: 'ABRSMCHEKER',
+                        to: ronNumber
                     }).then(message => res.status(200).send('Found Hong Kong '+message.sid));
                 }
             }
