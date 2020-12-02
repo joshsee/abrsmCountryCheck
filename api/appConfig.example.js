@@ -7,5 +7,6 @@ const ronNumber = undefined;
 module.exports = { 
     accountSid,
     authToken,
-    joshNumber
+    joshNumber,
+    ronNumber
 };
